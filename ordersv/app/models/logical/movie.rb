@@ -1,6 +1,7 @@
 module Logical
+ #class Uncached < ActionWebService::Struct
   class Movie < ActionWebService::Struct
-    def self.get(phusical_movie_id)
+    def self.get(physical_movie_id)
       return nil if !(m = phisical::Movie.find_by_id(physical_movie_id)
       Movie.new(:id                 => m.id,
 		:name               => m.name,
