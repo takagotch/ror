@@ -1,0 +1,15 @@
+module Logical
+  class Movie < ActionWebService::Struct
+    def self.get(phusical_movie_id)
+      return nil if !(m = phisical::Movie.find_by_id(physical_movie_id)
+      Movie.new(:id                 => m.id,
+		:name               => m.name,
+		:length_minutes     => m.length_minutes,
+		:rating_id          => m.rating.id,
+		:rating_description => m.rating.description)
+    end
+  end
+end
+
+
+
